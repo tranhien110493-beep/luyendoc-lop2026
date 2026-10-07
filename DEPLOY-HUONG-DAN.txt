@@ -1,0 +1,32 @@
+Luyen Doc Tieng Viet Lop 2 - Ban doc lap Manus
+
+1) Ban nay KHONG phu thuoc Manus.
+   - Khong Manus OAuth
+   - Khong Manus Forge
+   - Khong Manus Storage
+   - Khong Manus hosting/runtime
+
+2) Chay tren may Windows
+   - Cai Node.js 20+.
+   - Mo file START-WINDOWS.bat.
+   - Lan dau chuong trinh se cai thu vien.
+   - Mo http://localhost:3000
+
+3) AI
+   - Neu khong dien OPENAI_API_KEY: website van chay, dung cau hoi/nhan xet du phong.
+   - Neu muon AI tao cau hoi va nhan xet: mo file .env va dien OPENAI_API_KEY.
+
+4) FPT.AI
+   - Neu muon tao audio bai doc/nhan xet bang FPT.AI: dien FPT_TTS_API_KEY.
+   - Micro doc bai cua hoc sinh dung SpeechRecognition cua trinh duyet, khong qua Manus.
+
+5) Du lieu
+   - data/db.json: bai giao + ket qua hoc sinh.
+   - data/uploads/: audio co giao tai len.
+
+6) Khi dua len hosting
+   - Hosting phai chay duoc Node.js/Express hoac Docker.
+   - Dat NODE_ENV=production, PORT=3000.
+   - Dat JWT_SECRET va TEACHER_PIN.
+   - Neu dung AI/TTS thi dat OPENAI_API_KEY/FPT_TTS_API_KEY.
+   - Khong can tai khoan Manus.

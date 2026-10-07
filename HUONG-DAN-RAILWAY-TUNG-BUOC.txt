@@ -1,0 +1,30 @@
+LUYEN DOC TIENG VIET LOP 2 - DUA LEN RAILWAY
+
+Muc tieu: co mot duong link cong khai de gui cho hoc sinh, khong can Manus.
+
+1. Tao tai khoan Railway va dang nhap bang Google/GitHub.
+2. Tao mot repository GitHub moi, vi du: luyendoc2.
+3. Giai nen file ZIP nay tren may. Tai len GitHub TOAN BO NOI DUNG BEN TRONG thu muc luyendoc2_work (khong tai nguyen ca thu muc boc ngoai).
+4. Tren Railway chon New Project -> Deploy from GitHub Repo -> chon repository luyendoc2.
+5. Railway se doc Dockerfile va build ung dung.
+6. Vao service -> Variables, tao:
+   NODE_ENV=production
+   JWT_SECRET=<mot chuoi bi mat dai>
+   TEACHER_PIN=<ma PIN rieng cua co>
+   DATA_DIR=/app/data
+   OPENAI_API_KEY=<bo trong neu chua dung AI>
+   FPT_TTS_API_KEY=<bo trong neu chua dung FPT TTS>
+7. Vao service -> Volumes -> tao volume 0.5 GB (Free/Trial) hoac toi da 5 GB tren Hobby, mount path: /app/data.
+8. Deploy lai.
+9. Vao Settings/Networking -> Generate Domain. Railway se cap mot link https://....up.railway.app
+10. Mo link do tren may tinh va dien /api/health. Neu thay {"ok":true} la server da chay.
+11. Gui link cho hoc sinh.
+
+LUU Y QUAN TRONG
+- Volume /app/data la noi giu db.json va audio; neu khong gan volume, du lieu local co the mat khi container bi thay moi.
+- Khong dua OPENAI_API_KEY vao ma nguon GitHub. Chi dat trong Railway Variables.
+- Khong can Manus de website hoat dong.
+- SpeechRecognition tieng Viet van chay tren trinh duyet hoc sinh; mot so trinh duyet co the yeu cau HTTPS, vi vay dung link https Railway.
+
+CHI PHI
+Railway hien co goi Free/Trial cho viec bat dau va volume 0.5 GB; sau giai doan thu, trang pricing hien neu dung goi Free thi co muc $1/thang, con Hobby co muc toi thieu $5/thang. Kiem tra gia hien hanh tren Railway truoc khi nang cap.
